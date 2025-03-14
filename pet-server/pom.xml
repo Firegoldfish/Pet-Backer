@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.hjy</groupId>
-    <artifactId>pet-system</artifactId>
+    <artifactId>pet-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>pet-system</name>
     <description>pet-system</description>

@@ -16,8 +16,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>pet-common</module>
-        <module>pet-system</module>
-        <module>pet-admin</module>
+        <module>pet-server</module>
+        <module>pet-pojo</module>
     </modules>
     <url/>
     <licenses>
