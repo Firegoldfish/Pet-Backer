@@ -25,61 +25,61 @@ INSERT INTO `pet_admin` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 
 -- ----------------------------
 -- Table structure for pet_fav
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_fav`;
-CREATE TABLE `pet_fav`  (
-                            `fav_id` int NOT NULL AUTO_INCREMENT COMMENT '收藏ID',
-                            `fav_user_id` int NOT NULL DEFAULT 0 COMMENT '用户ID',
-                            `fav_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏标题',
-                            `fav_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏类型（如服务、商品等）',
-                            `fav_oid` int NOT NULL DEFAULT 0 COMMENT '收藏对象ID',
-                            `fav_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏对象路径',
+DROP TABLE IF EXISTS `pet_favorite`;
+CREATE TABLE pet_favorite  (
+                            `favorite_id` int NOT NULL AUTO_INCREMENT COMMENT '收藏ID',
+                            `favorite_user_id` int NOT NULL DEFAULT 0 COMMENT '用户ID',
+                            `favorite_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏标题',
+                            `favorite_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏类型（如服务、商品等）',
+                            `favorite_oid` int NOT NULL DEFAULT 0 COMMENT '收藏对象ID',
+                            `favorite_path` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏对象路径',
                             `add_time` bigint NOT NULL DEFAULT 0 COMMENT '添加时间',
                             `edit_time` bigint NOT NULL DEFAULT 0 COMMENT '编辑时间',
-                            PRIMARY KEY (`fav_id`) USING BTREE
+                            PRIMARY KEY (`favorite_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for pet_meet
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_meet`;
-CREATE TABLE `pet_meet`  (
-                             `meet_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约ID',
-                             `meet_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务标题',
+DROP TABLE IF EXISTS `pet_reserve`;
+CREATE TABLE `pet_reserve`  (
+                             `reserve_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约ID',
+                             `reserve_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务标题',
                              `meet_cate_id` int NOT NULL DEFAULT 0 COMMENT '服务分类ID',
-                             `meet_cate_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '服务分类名称',
-                             `meet_status` int NOT NULL DEFAULT 1 COMMENT '服务状态（0-关闭，1-开启）',
-                             `meet_order` int NOT NULL DEFAULT 9999 COMMENT '服务排序',
-                             `meet_vouch` int NOT NULL DEFAULT 0 COMMENT '服务推荐标识（0-不推荐，1-推荐）',
-                             `meet_days` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务可用日期',
-                             `meet_view_cnt` int NOT NULL DEFAULT 0 COMMENT '服务浏览次数',
-                             `meet_max_cnt` int NOT NULL DEFAULT 0 COMMENT '服务最大预约次数',
-                             `meet_forms` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务表单配置',
-                             `meet_obj` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务扩展信息',
+                             `reserve_cate_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL COMMENT '服务分类名称',
+                             `reserve_status` int NOT NULL DEFAULT 1 COMMENT '服务状态（0-关闭，1-开启）',
+                             `reserve_order` int NOT NULL DEFAULT 9999 COMMENT '服务排序',
+                             `reserve_vouch` int NOT NULL DEFAULT 0 COMMENT '服务推荐标识（0-不推荐，1-推荐）',
+                             `reserve_days` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务可用日期',
+                             `reserve_view_cnt` int NOT NULL DEFAULT 0 COMMENT '服务浏览次数',
+                             `reserve_max_cnt` int NOT NULL DEFAULT 0 COMMENT '服务最大预约次数',
+                             `reserve_forms` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务表单配置',
+                             `reserve_obj` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务扩展信息',
                              `add_time` bigint NOT NULL DEFAULT 0 COMMENT '添加时间',
                              `edit_time` bigint NOT NULL DEFAULT 0 COMMENT '编辑时间',
-                             PRIMARY KEY (`meet_id`) USING BTREE
+                             PRIMARY KEY (`reserve_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for pet_meet_join
+-- Table structure for pet_reserve_join
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_meet_join`;
-CREATE TABLE `pet_meet_join`  (
-                                  `meet_join_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约参与ID',
-                                  `meet_join_user_id` int NOT NULL DEFAULT 0 COMMENT '用户ID',
-                                  `meet_join_meet_id` int NOT NULL DEFAULT 0 COMMENT '服务预约ID',
-                                  `meet_join_code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约码',
-                                  `meet_join_is_check` int NOT NULL DEFAULT 0 COMMENT '是否已核验（0-未核验，1-已核验）',
-                                  `meet_join_check_time` bigint NOT NULL DEFAULT 0 COMMENT '核验时间',
-                                  `meet_join_forms` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约表单数据',
-                                  `meet_join_obj` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约扩展信息',
-                                  `meet_join_status` int NOT NULL DEFAULT 0 COMMENT '预约状态（0-待确认，1-已确认，2-已取消）',
-                                  `meet_join_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约时间',
-                                  `meet_join_day` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约日期',
-                                  `meet_join_meet_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务标题',
+DROP TABLE IF EXISTS `pet_reserve_join`;
+CREATE TABLE `pet_reserve_join`  (
+                                  `reserve_join_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约参与ID',
+                                  `reserve_join_user_id` int NOT NULL DEFAULT 0 COMMENT '用户ID',
+                                  `reserve_join_reserve_id` int NOT NULL DEFAULT 0 COMMENT '服务预约ID',
+                                  `reserve_join_code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约码',
+                                  `reserve_join_is_check` int NOT NULL DEFAULT 0 COMMENT '是否已核验（0-未核验，1-已核验）',
+                                  `reserve_join_check_time` bigint NOT NULL DEFAULT 0 COMMENT '核验时间',
+                                  `reserve_join_forms` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约表单数据',
+                                  `reserve_join_obj` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约扩展信息',
+                                  `reserve_join_status` int NOT NULL DEFAULT 0 COMMENT '预约状态（0-待确认，1-已确认，2-已取消）',
+                                  `reserve_join_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约时间',
+                                  `reserve_join_day` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约日期',
+                                  `reserve_join_reserve_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务标题',
                                   `add_time` bigint NOT NULL DEFAULT 0 COMMENT '添加时间',
                                   `edit_time` bigint NOT NULL DEFAULT 0 COMMENT '编辑时间',
-                                  PRIMARY KEY (`meet_join_id`) USING BTREE
+                                  PRIMARY KEY (`reserve_join_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 11193 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------

@@ -10,8 +10,8 @@
     <groupId>com.hjy</groupId>
     <artifactId>pet-pojo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pet-admin</name>
-    <description>pet-admin</description>
+    <name>pet-pojo</name>
+    <description>pet-pojo</description>
     <url/>
     <licenses>
         <license/>

@@ -10,8 +10,8 @@
     <groupId>com.hjy</groupId>
     <artifactId>pet-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>pet-system</name>
-    <description>pet-system</description>
+    <name>pet-server</name>
+    <description>pet-server</description>
     <url/>
     <licenses>
         <license/>
