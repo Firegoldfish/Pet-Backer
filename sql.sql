@@ -11,6 +11,9 @@ CREATE TABLE `slides` (
   PRIMARY KEY (`slides_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='轮播图';
 
+DROP TABLE IF EXISTS 'auth';
+CREATE TABLE 'auth' (
+  'auth_id' int(11) NOT NULL AUTO_INCREMENT COMMENT '权限ID',
   `user_group` varchar(64) DEFAULT NULL COMMENT '用户组：',
   `mod_name` varchar(64) DEFAULT NULL COMMENT '模块名：',
   `table_name` varchar(64) DEFAULT NULL COMMENT '表名：',
@@ -32,6 +35,7 @@ CREATE TABLE `slides` (
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间：',
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='用户权限管理';
+
 DROP TABLE IF EXISTS `upload`;
 CREATE TABLE `upload` (
   `upload_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '上传ID',
@@ -45,6 +49,7 @@ CREATE TABLE `upload` (
   PRIMARY KEY (`upload_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='文件上传';
 insert into `upload` values ('1','movie.mp4','/upload/movie.mp4','',null,'0',null,'video');
+
 DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice` (
   `notice_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '公告id：',
@@ -58,6 +63,7 @@ insert into `notice` values ('1','网站公告','<p>公告，是指政府、团�
 insert into `notice` values ('2','关于我们','<p>       一个网站要取得成功，要有先进的理念、先进的思想，更为重要的是抢占先机，及时行动。网络世界可谓一日千里、 日新月异，一个网站只有把握先机，抓住机遇，才</p><p>可能有更多的机会获得成功，可能处于网络行业发展的致高点，可能创建出成功的网站，才能能获得成功。要知道一种网站新模式在网络上只有保持几天的优势,因为人们很容易“COPY" 和模仿，因此，唯有不</p><p>断创新，不失时机地推出新的服务、新的模式、新的思想，网站才可能长久立于不败之地。</p>','2025-03-17 18:21:49.0','2025-03-17 18:21:49.0');
 insert into `notice` values ('3','联系方式','<h3>网站内容及品牌合作</h3><p>Email：Firegoldfish@outlook.com</p><h3>商务合作</h3><p>电话：(313)403-8545)</p><p>Email：Firegoldfish@outlook.com</p><h3><br></h3><h3><br></h3><p><br></p>','2025-03-17 18:21:49.0','2025-03-17 18:21:49.0');
 insert into `notice` values ('4','网站介绍','<p>此处可上传文字、图片、视频、超链接、表格等内容区</p>','2025-03-17 18:21:49.0','2025-03-17 18:21:49.0');
+
 DROP TABLE IF EXISTS `sensitive_vocabulary`;
 CREATE TABLE `sensitive_vocabulary` (
   `sensitive_vocabulary_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '敏感词汇ID',
@@ -67,6 +73,7 @@ CREATE TABLE `sensitive_vocabulary` (
   PRIMARY KEY (`sensitive_vocabulary_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='敏感词汇';
 DROP TABLE IF EXISTS `user_group`;
+
 CREATE TABLE `user_group` (
   `group_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户组ID：[0,8388607]',
   `display` smallint(4) unsigned NOT NULL DEFAULT '100' COMMENT '显示顺序：[0,1000]',
