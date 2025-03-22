@@ -1,0 +1,28 @@
+pet:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: ${SERVER_IP}
+    port: 3306
+    database: pet
+    username: root
+    password: Aa114514
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: ${ALIBABA_CLOUD_ACCESS_KEY_ID}
+    access-key-secret: ${ALIBABA_CLOUD_ACCESS_KEY_SECRET}
+    bucket-name: pet-backer
+  redis:
+    host: ${SERVER_IP}
+    port: 6379
+    password: Aa114514
+    database: 10
+  wechat:
+    appid: ${WECHAT_APPID}
+    secret: ${WECHAT_APP_SECRET}
+    mchid: 1
+    mch-serial-no: 1
+    private-key-file-path: 1
+    api-v3-key: 1
+    we-chat-pay-cert-file-path: 1
+    notify-url: 1
+    refund-notify-url: 1

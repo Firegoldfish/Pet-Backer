@@ -1,0 +1,68 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: ${pet.datasource.driver-class-name}
+      url: jdbc:mysql://${pet.datasource.host}:${pet.datasource.port}/${pet.datasource.database}
+      username: ${pet.datasource.username}
+      password: ${pet.datasource.password}
+  data:
+    redis:
+      host: ${pet.redis.host}
+      port: ${pet.redis.port}
+      password: ${pet.redis.password}
+      database: ${pet.redis.database}
+
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.pet.entity
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      pet:
+        mapper: debug
+        service: info
+        controller: info
+
+pet:
+  jwt:
+    # 管理端
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: firegoldfish
+    # 设置jwt过期时间
+    admin-ttl: 7200000
+    # 设置前端传递过来的令牌名称
+    admin-token-name: token
+    # 用户端
+    # 设置jwt签名加密时使用的密钥
+    user-secret-key: firegoldfish
+    # jwt过期时间
+    user-ttl: 7200000
+    # 前端传递来的令牌名称
+    user-token-name: authentication
+  alioss:
+    endpoint: ${pet.alioss.endpoint}
+    access-key-id: ${pet.alioss.access-key-id}
+    access-key-secret: ${pet.alioss.access-key-secret}
+    bucket-name: ${pet.alioss.bucket-name}
+  wechat:
+    appid: ${pet.wechat.appid}
+    secret: ${pet.wechat.secret}
+    mchid: ${pet.wechat.mchid}
+    mch-serial-no: ${pet.wechat.mch-serial-no}
+    private-key-file-path: ${pet.wechat.private-key-file-path}
+    api-v3-key: ${pet.wechat.api-v3-key}
+    we-chat-pay-cert-file-path: ${pet.wechat.we-chat-pay-cert-file-path}
+    notify-url: ${pet.wechat.notify-url}
+    refund-notify-url: ${pet.wechat.refund-notify-url}
