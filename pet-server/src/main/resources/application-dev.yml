@@ -15,7 +15,7 @@ pet:
     host: ${SERVER_IP}
     port: 6379
     password: Aa114514
-    database: 10
+    database: 8
   wechat:
     appid: ${WECHAT_APPID}
     secret: ${WECHAT_APP_SECRET}
