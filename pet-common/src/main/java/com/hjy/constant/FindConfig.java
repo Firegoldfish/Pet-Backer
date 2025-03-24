@@ -1,7 +1,6 @@
 package com.hjy.constant;
 
 public class FindConfig {
-
     public static String PAGE = "page";
     public static String SIZE = "size";
     public static String LIKE = "like";
