@@ -10,4 +10,5 @@ public class FindConfig {
     public static String MIN_ = "_min";
     public static String MAX_ = "_max";
     public static String SQLHWERE = "sqlwhere";
+
 }
