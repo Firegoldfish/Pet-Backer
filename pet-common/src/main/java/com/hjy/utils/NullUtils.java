@@ -10,7 +10,6 @@ public class NullUtils {
         if(str == null || Objects.equals("",str) || Objects.equals("null",str) || Objects.equals("undefined",str)) {
             return true;
         }
-
         return false;
     }
 }
