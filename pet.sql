@@ -2,10 +2,10 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for pet_admin
+-- Table structure for admin
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_admin`;
-CREATE TABLE `pet_admin`  (
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
                               `admin_id` int NOT NULL AUTO_INCREMENT COMMENT '管理员ID',
                               `admin_name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '管理员名称',
                               `admin_password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '管理员密码',
@@ -20,13 +20,13 @@ CREATE TABLE `pet_admin`  (
                               PRIMARY KEY (`admin_id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
-INSERT INTO `pet_admin` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin', NULL, 1, 1, 1, 1735302901541, 0, 1734786380484);
+INSERT INTO `admin` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin', NULL, 1, 1, 1, 1735302901541, 0, 1734786380484);
 
 -- ----------------------------
--- Table structure for pet_fav
+-- Table structure for fav
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_favorite`;
-CREATE TABLE pet_favorite  (
+DROP TABLE IF EXISTS `favorite`;
+CREATE TABLE favorite  (
                             `favorite_id` int NOT NULL AUTO_INCREMENT COMMENT '收藏ID',
                             `favorite_user_id` int NOT NULL DEFAULT 0 COMMENT '用户ID',
                             `favorite_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '收藏标题',
@@ -39,10 +39,10 @@ CREATE TABLE pet_favorite  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for pet_meet
+-- Table structure for reserve
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_reserve`;
-CREATE TABLE `pet_reserve`  (
+DROP TABLE IF EXISTS `reserve`;
+CREATE TABLE `reserve`  (
                              `reserve_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约ID',
                              `reserve_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '服务标题',
                              `meet_cate_id` int NOT NULL DEFAULT 0 COMMENT '服务分类ID',
@@ -61,11 +61,11 @@ CREATE TABLE `pet_reserve`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for pet_reserve_join
+-- Table structure for reserve_join
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_reserve_join`;
-CREATE TABLE `pet_reserve_join`  (
-                                  `reserve_join_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约参与ID',
+DROP TABLE IF EXISTS `reserve_join`;
+CREATE TABLE `reserve_join`  (
+                                  `reserve_join_id` int NOT NULL AUTO_INCREMENT COMMENT '服务预约ID',
                                   `reserve_join_user_id` int NOT NULL DEFAULT 0 COMMENT '用户ID',
                                   `reserve_join_reserve_id` int NOT NULL DEFAULT 0 COMMENT '服务预约ID',
                                   `reserve_join_code` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '预约码',
@@ -83,10 +83,10 @@ CREATE TABLE `pet_reserve_join`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 11193 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for pet_news
+-- Table structure for news
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_news`;
-CREATE TABLE `pet_news`  (
+DROP TABLE IF EXISTS `news`;
+CREATE TABLE `news`  (
                              `news_id` int NOT NULL AUTO_INCREMENT COMMENT '新闻ID',
                              `news_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '新闻标题',
                              `news_cate_id` int NOT NULL DEFAULT 0 COMMENT '新闻分类ID',
@@ -105,10 +105,10 @@ CREATE TABLE `pet_news`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 66 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for pet_setup
+-- Table structure for setup
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_setup`;
-CREATE TABLE `pet_setup`  (
+DROP TABLE IF EXISTS `setup`;
+CREATE TABLE `setup`  (
                               `setup_id` int NOT NULL AUTO_INCREMENT COMMENT '系统配置ID',
                               `setup_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '配置类型',
                               `setup_key` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '配置键',
@@ -119,10 +119,10 @@ CREATE TABLE `pet_setup`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Table structure for pet_user
+-- Table structure for user
 -- ----------------------------
-DROP TABLE IF EXISTS `pet_user`;
-CREATE TABLE `pet_user`  (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
                              `user_id` int NOT NULL AUTO_INCREMENT COMMENT '用户ID',
                              `user_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户名称',
                              `user_account` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '用户账号',

@@ -3,7 +3,7 @@ pet:
     driver-class-name: com.mysql.cj.jdbc.Driver
     host: ${SERVER_IP}
     port: 3306
-    database: pet
+    database: wepet
     username: root
     password: Aa114514
   alioss:
@@ -26,3 +26,4 @@ pet:
     we-chat-pay-cert-file-path: 1
     notify-url: 1
     refund-notify-url: 1
+

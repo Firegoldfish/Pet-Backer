@@ -1,6 +1,11 @@
 server:
-  port: 8080
-
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8888
+  context-path: /
+  error:
+    whitelabel:
+      enabled: false
 spring:
   profiles:
     active: dev
@@ -18,9 +23,26 @@ spring:
       port: ${pet.redis.port}
       password: ${pet.redis.password}
       database: ${pet.redis.database}
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: always
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+      enabled: true
+  # 指定静态资源的路径
+  mvc:
+    # URL响应地址（Springboot默认为/**)
+    static-path-pattern: /pic/**
+  web:
+    resources:
+      static-locations: classpath:/static/,file:${upload.path}
 
 mybatis:
-  #mapper配置文件
+  # mapper配置文件
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.pet.entity
   configuration:
@@ -34,23 +56,17 @@ logging:
         mapper: debug
         service: info
         controller: info
+#服务器地址
+serverUrl: http://localhost:8888
 
 pet:
   jwt:
-    # 管理端
-    # 设置jwt签名加密时使用的秘钥
-    admin-secret-key: firegoldfish
-    # 设置jwt过期时间
-    admin-ttl: 7200000
-    # 设置前端传递过来的令牌名称
-    admin-token-name: token
-    # 用户端
-    # 设置jwt签名加密时使用的密钥
-    user-secret-key: firegoldfish
-    # jwt过期时间
-    user-ttl: 7200000
-    # 前端传递来的令牌名称
-    user-token-name: authentication
+    # 加密秘钥
+    secret: firegoldfish
+    # token有效时长 单位秒 7天604800
+    adminExpire: 86400
+    custExpire: 604800
+    workExpire: 604800
   alioss:
     endpoint: ${pet.alioss.endpoint}
     access-key-id: ${pet.alioss.access-key-id}
