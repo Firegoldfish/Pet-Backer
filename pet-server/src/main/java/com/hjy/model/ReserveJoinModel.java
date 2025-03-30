@@ -16,7 +16,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @TableName("reserve_join")
-public class ReserveJoin extends BaseModel {
+public class ReserveJoinModel extends BaseModel {
     /**
      * 状态
      */
