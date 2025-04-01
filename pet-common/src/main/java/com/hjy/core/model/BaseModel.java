@@ -1,4 +1,4 @@
-package com.hjy.constant.core.model;
+package com.hjy.core.model;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * @Note:
  * @Author：Bill_Huo
- * @Date：2025/3/19 15:32
+ * @Date：2025/2/19 15:32
  */
 
 @Data

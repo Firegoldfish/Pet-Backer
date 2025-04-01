@@ -58,6 +58,7 @@ logging:
         controller: info
 #服务器地址
 serverUrl: http://localhost:8888
+isDemo: false
 
 pet:
   jwt:
@@ -82,3 +83,10 @@ pet:
     we-chat-pay-cert-file-path: ${pet.wechat.we-chat-pay-cert-file-path}
     notify-url: ${pet.wechat.notify-url}
     refund-notify-url: ${pet.wechat.refund-notify-url}
+
+# 文件上传
+upload:
+  path: c:\file
+  # 文件服务器的图片子目录 （斜杠结尾）
+  server: ${serverUrl}/pic
+
