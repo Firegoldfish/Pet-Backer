@@ -4,6 +4,7 @@ import com.hjy.core.domain.LoginDTO;
 import com.hjy.model.UserModel;
 import com.hjy.properties.WechatProperties;
 import com.hjy.service.LoginService;
+import com.hjy.exception.LoginFailedException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class LoginServiceImpl implements LoginService {
         //判断openid是否为空，为空抛出异常
         if (openid == null) {
             //抛出异常
-            throw new LoginFailedException(MessageConstant.LOGIN_FAILED);
+            throw new LoginFailedException("登录失败");
         }
         //判断当前用户是否为新用户，如果是新用户则自动注册，存数据库
         UserModel user = userMapper.getByOpenid(openid);
