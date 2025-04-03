@@ -68,6 +68,7 @@ pet:
     adminExpire: 86400
     custExpire: 604800
     workExpire: 604800
+    userTokenName: authentication
   alioss:
     endpoint: ${pet.alioss.endpoint}
     access-key-id: ${pet.alioss.access-key-id}

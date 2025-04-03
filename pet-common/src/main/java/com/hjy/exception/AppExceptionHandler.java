@@ -1,8 +1,12 @@
 package com.hjy.exception;
 
+import com.hjy.constant.AppCode;
+import com.hjy.core.domain.ApiResult;
 import org.apache.ibatis.javassist.NotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * @Note:
