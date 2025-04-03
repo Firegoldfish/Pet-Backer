@@ -1,6 +1,10 @@
 package com.hjy.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hjy.core.mapper.ProjectBaseMapper;
+import com.hjy.model.UserModel;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,6 +13,13 @@ import org.springframework.stereotype.Repository;
  * @Date：2025/4/3 14:52
  */
 @Mapper
-@Repository("userMapper")
-public interface UserMapper {
+@Repository("UserMapper")
+public interface UserMapper extends ProjectBaseMapper<UserModel> {
+    /**
+     * 根据openid查询用户
+     * @param openid
+     * @return
+     */
+    @Select("select * from user where openId = #{open_id}")
+    UserModel getByOpenid(String openid);
 }
