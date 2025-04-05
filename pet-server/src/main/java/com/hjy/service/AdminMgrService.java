@@ -28,7 +28,6 @@ public class AdminMgrService extends BaseService {
     @Resource(name = "AdminMapper")
     private AdminMapper adminMapper;
 
-
     /**
      * 管理员列表
      */

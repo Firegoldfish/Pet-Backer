@@ -1,6 +1,7 @@
 package com.hjy.controller.admin;
 
 import cn.hutool.core.map.MapUtil;
+import com.hjy.annotation.DemoShow;
 import com.hjy.core.domain.ApiResult;
 import com.hjy.core.domain.PageParams;
 import com.hjy.core.domain.PageResult;
@@ -25,7 +26,6 @@ public class AdminMgrController extends BaseMyAdminController{
     @Resource(name = "AdminMgrService")
     private AdminMgrService adminMgrService;
 
-
     @RequestMapping(value = "/admin/mgr/list")
     public ApiResult getMgrList(@RequestBody Map<String, Object> input, @RequestAttribute long adminId) {
         // 数据校验
@@ -46,7 +46,7 @@ public class AdminMgrController extends BaseMyAdminController{
         return ApiResult.success(ret);
     }
 
-    // @DemoShow
+    @DemoShow
     @RequestMapping(value = "/admin/mgr/del")
     public ApiResult delMgr(@RequestBody Map<String, Object> input, @RequestAttribute long adminId) {
 
@@ -63,7 +63,7 @@ public class AdminMgrController extends BaseMyAdminController{
         return ApiResult.success();
     }
 
-    // @DemoShow
+    @DemoShow
     @RequestMapping(value = "/admin/mgr/status")
     public ApiResult statusMgr(@RequestBody Map<String, Object> input, @RequestAttribute long adminId) {
 
@@ -83,7 +83,7 @@ public class AdminMgrController extends BaseMyAdminController{
         return ApiResult.success();
     }
 
-    // @DemoShow
+    @DemoShow
     @RequestMapping(value = "/admin/mgr/insert")
     public ApiResult insertMgr(@RequestBody Map<String, Object> input) {
 
@@ -105,7 +105,7 @@ public class AdminMgrController extends BaseMyAdminController{
         return ApiResult.success();
     }
 
-    // @DemoShow
+    @DemoShow
     @RequestMapping(value = "/admin/mgr/edit")
     public ApiResult editMgr(@RequestBody Map<String, Object> input) {
 
@@ -128,7 +128,7 @@ public class AdminMgrController extends BaseMyAdminController{
         return ApiResult.success();
     }
 
-    // @DemoShow
+    @DemoShow
     @RequestMapping(value = "/admin/mgr/pwd")
     public ApiResult pwdMgr(@RequestBody Map<String, Object> input, @RequestAttribute long adminId) {
 
