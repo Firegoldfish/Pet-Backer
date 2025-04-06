@@ -1,7 +1,7 @@
 package com.hjy.controller.admin;
 
 import com.hjy.core.controller.BaseController;
-import com.hjy.service.AdminMgrService;
+import com.hjy.service.admin.AdminMgrService;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RestController;
 

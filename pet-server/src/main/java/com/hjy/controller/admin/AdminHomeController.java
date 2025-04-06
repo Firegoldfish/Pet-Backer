@@ -4,7 +4,8 @@ import cn.hutool.core.map.MapUtil;
 import com.hjy.annotation.DemoShow;
 import com.hjy.annotation.LoginIgnore;
 import com.hjy.core.domain.ApiResult;
-import com.hjy.service.AdminHomeService;
+import com.hjy.service.admin.AdminHomeService;
+import com.hjy.service.user.PublicService;
 import com.hjy.validate.DataCheck;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,7 @@ public class AdminHomeController extends BaseMyAdminController {
     @Resource(name = "AdminHomeService")
     private AdminHomeService adminHomeService;
 
-    @Resource(name = "MeetPetPublicService")
+    @Resource(name = "PublicService")
     private PublicService publicService;
 
     @RequestMapping(value = "/admin/home")

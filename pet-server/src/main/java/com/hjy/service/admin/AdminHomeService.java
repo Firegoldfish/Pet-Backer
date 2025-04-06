@@ -1,4 +1,4 @@
-package com.hjy.service;
+package com.hjy.service.admin;
 
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.crypto.digest.DigestUtil;

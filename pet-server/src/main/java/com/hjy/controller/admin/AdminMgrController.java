@@ -6,7 +6,7 @@ import com.hjy.core.domain.ApiResult;
 import com.hjy.core.domain.PageParams;
 import com.hjy.core.domain.PageResult;
 import com.hjy.model.AdminModel;
-import com.hjy.service.AdminMgrService;
+import com.hjy.service.admin.AdminMgrService;
 import com.hjy.utils.TimeUtils;
 import com.hjy.validate.DataCheck;
 import jakarta.annotation.Resource;
