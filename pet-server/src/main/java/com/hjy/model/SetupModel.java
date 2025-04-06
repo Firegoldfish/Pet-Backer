@@ -21,12 +21,12 @@ public class SetupModel extends BaseModel {
     private Long id; // 配置ID
 
     @TableField("setup_type")
-    private String type; // 配置类型（如：email、sms、payment等）
+    private String setupType; // 配置类型（如：email、sms、payment等）
 
     @TableField("setup_key")
-    private String key; // 配置键（唯一标识）
+    private String setupKey; // 配置键（唯一标识）
 
     @TableField("setup_value")
-    private String value; // 配置值（JSON格式存储）
+    private String setupValue; // 配置值（JSON格式存储）
 
 }
