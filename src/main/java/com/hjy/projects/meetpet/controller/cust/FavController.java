@@ -53,7 +53,6 @@ public class FavController extends BaseMyCustController {
                 "path:string|name=路径",
         };
         DataCheck.check(input, RULES);
-
         long oid = MapUtil.getLong(input, "oid");
         String title = MapUtil.getStr(input, "title");
         String type = MapUtil.getStr(input, "type");
