@@ -154,7 +154,6 @@ public class MeetController extends BaseMyCustController {
         for (Map<String, Object> record : list) {
             record.put("meetDays", meetService.calcDays(Convert.toStr(record.get("meetDays"))));
             FormHelper.fmtDBObj(record, "meetObj", "cover,tag");
-
         }
 
         return ApiResult.success(ret);
