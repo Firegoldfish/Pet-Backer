@@ -223,7 +223,6 @@ public class MeetController extends BaseMyCustController {
                 "fromDay:must|string|name=日期"
         };
         DataCheck.check(input, RULES);
-
         // 业务
         String fromDay = MapUtil.getStr(input, "fromDay");
         Object ret = meetService.getMeetHasDaysFromDay(fromDay);
