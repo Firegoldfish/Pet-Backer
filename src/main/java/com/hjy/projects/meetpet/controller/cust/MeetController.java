@@ -211,7 +211,6 @@ public class MeetController extends BaseMyCustController {
         // 业务
         String day = MapUtil.getStr(input, "day");
         Object ret = meetService.getMeetListByDay(day);
-
         return ApiResult.success(ret);
     }
 
