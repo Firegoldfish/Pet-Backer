@@ -84,7 +84,6 @@ public class AdminMeetController extends BaseMyAdminController {
         List<Map<String, Object>> list = ret.getList();
 
         for (Map<String, Object> record : list) {
-
             TimeHelper.db2Time(record, "meetJoinCheckTime");
             FormHelper.db2Forms(record, "meetJoinForms");
             FormHelper.removeField(record, "meetJoinObj");
