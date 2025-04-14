@@ -61,7 +61,6 @@ public class AdminMeetController extends BaseMyAdminController {
 
     @RequestMapping(value = "/admin/meet/join/list")
     public ApiResult getAdminMeetJoinList(@RequestBody Map<String, Object> input) {
-
         // 数据校验
         String[] RULES = {
                 "meetId:must|int",
