@@ -417,10 +417,10 @@ public class AdminMeetService extends BaseMyAdminService {
         where.eq("MEET_JOIN_MEET_ID", meetId);
         where.eq("MEET_JOIN_CODE", code);
         MeetJoinModel meetJoin = meetJoinMapper.getOne(where);
-        if (ObjectUtil.isEmpty(meetJoin)) throw new AppException("没有该用户的报名记录，核销失败");
+        if (ObjectUtil.isEmpty(meetJoin)) throw new AppException("没有该用户的预约记录，核销失败");
 
         if (meetJoin.getMeetJoinStatus() != MeetJoinModel.STATUS.NORMAL)
-            throw new AppException("该用户未报名成功，核销失败");
+            throw new AppException("该用户未预约成功，核销失败");
 
         if (meetJoin.getMeetJoinIsCheck() == 1) throw new AppException("该用户已签到/核销，无须重复核销");
 
