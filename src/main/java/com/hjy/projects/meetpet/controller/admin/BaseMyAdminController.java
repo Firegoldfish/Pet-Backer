@@ -13,5 +13,4 @@ import javax.annotation.Resource;
 public class BaseMyAdminController extends BaseAdminController {
     @Resource(name = "MeetPetAdminMgrService")
     private AdminMgrService adminMgrService;
-
 }
