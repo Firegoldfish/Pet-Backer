@@ -54,7 +54,6 @@ public class AdminUserController extends BaseMyAdminController {
                 "id:must|long"
         };
         DataCheck.check(input, RULES);
-
         // 业务
         long userId = MapUtil.getLong(input, "id");
         adminUserService.delUser(userId);
