@@ -77,7 +77,6 @@ public class AdminUserService extends BaseMyAdminService {
         // 排序
         where.orderByDesc("USER_ID");
 
-
         Page page = new Page(pageRequest.getPage(), pageRequest.getSize());
         return userMapper.getPageList(page, where, "*");
     }
