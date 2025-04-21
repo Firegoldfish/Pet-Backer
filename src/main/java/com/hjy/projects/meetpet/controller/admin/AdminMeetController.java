@@ -25,7 +25,6 @@ import java.util.Map;
 @RestController("MeetPetAdminMeetController")
 public class AdminMeetController extends BaseMyAdminController {
 
-
     @Resource(name = "MeetPetAdminMeetService")
     private AdminMeetService adminMeetService;
 
