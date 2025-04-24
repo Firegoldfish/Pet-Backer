@@ -82,7 +82,7 @@ public class MeetController extends BaseMyCustController {
 
     @RequestMapping(value = "/meet/join")
     public ApiResult meetJoin(@RequestBody Map<String, Object> input, @RequestAttribute long userId) {
-
+        System.out.println(userId);
         // 数据校验
         String[] RULES = {
                 "meetId:must|id|name=id",
