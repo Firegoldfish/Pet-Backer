@@ -102,18 +102,13 @@ public class PassportService extends BaseMyCustService {
         ret.put("name", user.getUserName());
         ret.put("token", token);
         ret.put("expire", AppConfig.JWT_CUST_EXPIRE);
-
         if (user.getUserLoginTime() == 0)
             ret.put("last", "尚未登录");
         else
             ret.put("last", TimeHelper.timestamp2Time(user.getUserLoginTime()));
-
-
         user.setUserLoginTime(user.getUserLoginTime() + 1);
         user.setUserLoginTime(TimeHelper.timestamp());
         userMapper.update(user, where);
-
-
         return ret;
     }
 

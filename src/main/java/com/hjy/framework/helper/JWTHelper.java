@@ -19,19 +19,14 @@ public class JWTHelper {
      */
     public static String genToken(long id, String name, String sub, Long expire) {
         JWT jwt = JWT.create();
-
         // 设置携带数据
         jwt.setPayload("id", id);
         jwt.setPayload("name", name);
-
         jwt.setSubject(sub);
-
         // 设置密钥
         jwt.setKey(AppConfig.JWT_SECERT.getBytes());
-
         // 设置过期时间
         jwt.setExpiresAt(new Date(System.currentTimeMillis() + expire * 1000));
-
         return jwt.sign();
     }
 

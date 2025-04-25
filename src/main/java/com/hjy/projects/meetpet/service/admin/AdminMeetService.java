@@ -31,7 +31,7 @@ import java.util.*;
 /**
  * @Notes: 活动业务逻辑
  * @Author: Bill_Huo
- * @Date: 2025/7/15 12:10
+ * @Date: 2025/3/15 12:10
 
  */
 
@@ -302,7 +302,6 @@ public class AdminMeetService extends BaseMyAdminService {
         meetMapper.edit(uw);
     }
 
-
     /**
      * 首页设定
      */
@@ -322,7 +321,6 @@ public class AdminMeetService extends BaseMyAdminService {
 
         String savePath = FileHelper.getFileSavePath(pid, "xlsx", "data");
 
-
         ExcelWriter writer = ExcelUtil.getWriter(savePath);
         writer.renameSheet("预约名单");
         writer.writeHeadRow(Arrays.asList("序号", "姓名", "手机", "日期", "时段", "填写时间", "是否签到"));
@@ -333,7 +331,6 @@ public class AdminMeetService extends BaseMyAdminService {
         writer.setColumnWidth(4, 30);
         writer.setColumnWidth(5, 30);
         writer.setColumnWidth(6, 15);
-
 
         Where<MeetJoinModel> where = new Where<>();
         where.eq("MEET_JOIN_MEET_ID", meetId);
@@ -431,5 +428,4 @@ public class AdminMeetService extends BaseMyAdminService {
         uw.set("MEET_JOIN_CHECK_TIME", TimeHelper.timestamp());
         meetJoinMapper.edit(uw);
     }
-
 }
