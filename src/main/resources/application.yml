@@ -52,7 +52,7 @@ jwt:
 
 # 文件上传
 upload:
-  path: c:\file
+  path: /home/firegoldfish/
   # 文件服务器的图片子目录 （斜杠结尾）
   server: ${serverUrl}/pic
 
