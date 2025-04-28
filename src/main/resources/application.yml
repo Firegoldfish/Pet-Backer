@@ -36,7 +36,7 @@ spring:
       static-locations: classpath:/static/,file:${upload.path}
 
 #服务器地址 不带斜杠结尾
-serverUrl: http://localhost:8888
+serverUrl: http://48.210.228.128:8888
 
 isDemo: false
 
