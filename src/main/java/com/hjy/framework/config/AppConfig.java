@@ -9,8 +9,6 @@ import org.springframework.stereotype.Component;
  * @Date: 2025/3/3 11:14
 
  */
-
-
 @Component
 public class AppConfig {
 
