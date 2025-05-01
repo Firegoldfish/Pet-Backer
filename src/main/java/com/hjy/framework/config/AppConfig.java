@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
  * @Notes: application.yml配置恩家读取
  * @Author: Bill_Huo
  * @Date: 2025/3/3 11:14
-
  */
 @Component
 public class AppConfig {
