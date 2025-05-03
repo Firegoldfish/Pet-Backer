@@ -74,7 +74,6 @@ public class PassportController extends BaseMyCustController {
 
         Map<String, Object> token = passportService.login(account, password);
 
-
         return ApiResult.success(MapUtil.of("token", token));
     }
 
