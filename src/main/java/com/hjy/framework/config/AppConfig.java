@@ -60,7 +60,6 @@ public class AppConfig {
     public void setUploadPath(String uploadPath) {
         UPLOAD_PATH = uploadPath.endsWith("/") ? uploadPath : uploadPath + "/";
     }
-
     // 服务器存储的url访问地址
     public static String UPLOAD_SERVER;
 
