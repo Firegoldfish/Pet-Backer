@@ -75,7 +75,6 @@ public class AdminMeetController extends BaseMyAdminController {
                 "oldTotal:int"
         };
         DataCheck.check(input, RULES);
-
         // 业务
         PageParams pageParams = new PageParams(input);
         PageResult ret = adminMeetService.getAdminMeetJoinList(pageParams);
