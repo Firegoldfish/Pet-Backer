@@ -111,7 +111,6 @@ public interface ProjectBaseMapper<T> extends BaseMapper<T>, MPJBaseMapper<T> {
         List<Map<String, Object>> list = ret.getRecords();
 
         for (Map<String, Object> t : list) {
-
             Map<String, Object> newMap = new HashMap<>();
             for (Map.Entry entry : t.entrySet()) {
                 newMap.put(StrUtil.toCamelCase(entry.getKey().toString()), entry.getValue());
