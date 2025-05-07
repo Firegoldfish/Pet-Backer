@@ -94,7 +94,6 @@ public interface ProjectBaseMapper<T> extends BaseMapper<T>, MPJBaseMapper<T> {
         return ret;
     }
 
-
     default PageResult getPageJoinList(Page page, WhereJoin<T> where, String fields) {
         fields = this._fmtFields(fields);
 
