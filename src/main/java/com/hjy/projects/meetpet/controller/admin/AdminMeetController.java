@@ -334,7 +334,6 @@ public class AdminMeetController extends BaseMyAdminController {
 
     @RequestMapping(value = "/admin/meet/join/scan")
     public ApiResult scanMeetJoin(@RequestBody Map<String, Object> input) {
-
         // 数据校验
         String[] RULES = {
                 "meetId:must|id|name=id",
