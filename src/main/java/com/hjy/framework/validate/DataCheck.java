@@ -37,7 +37,6 @@ public class DataCheck {
         if (value.getClass() != Boolean.class) throw new AppException(desc + "类型错误(bool)", AppCode.ERROR_DATA);
     }
 
-
     // 小数
     static public void checkDouble(Object value, String desc) {
         if (NumberUtil.isNumber(value.toString()))
