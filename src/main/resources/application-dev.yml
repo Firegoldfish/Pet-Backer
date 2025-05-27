@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://ucloud.firegoldfish.com:3306/meetpet
     username: root
-    password: Aa114514
+    password: ${DB_PWD}
     #连接池的配置信息
     initialSize: 10
     minIdle: 10
